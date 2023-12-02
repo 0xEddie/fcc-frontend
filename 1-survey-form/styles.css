@@ -15,16 +15,14 @@ header {
 
 label {
 	display: block;
-	/* margin: 1rem 0; */
+}
+#favorite-set > label { /* but not for checkbox labels */
+	display: inline;
 }
 
 input, textarea, select {
 	margin: 0.25rem 0 0.25rem 0;
 	width: 100%;
-}
-input[type="radio"] {
-	margin-right: 1ch;
-	width: unset;
 }
 
 fieldset {
@@ -42,5 +40,11 @@ legend {
 }
 
 .inline {
-	display: inline-block;
+	display: inline;
+	width: unset;
+	margin: 0 0.5em 0 0;
+}
+
+.block {
+	display: block;
 }
