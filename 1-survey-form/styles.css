@@ -1,8 +1,46 @@
 body {
 	width: clamp(250px, 40%, 400px);
-	margin: 1em auto;
+	margin: 1rem auto;
 }
-input {
+
+header {
+	margin: 1rem auto;
+	text-align: center;
+}
+
+.flex {
+	display:flex;
+	align-items: center;
+}
+
+label {
 	display: block;
-	/* margin: 1em 0; */
+	/* margin: 1rem 0; */
+}
+
+input, textarea, select {
+	margin: 0.25rem 0 0.25rem 0;
+	width: 100%;
+}
+input[type="radio"] {
+	margin-right: 1ch;
+	width: unset;
+}
+
+fieldset {
+  border: none;
+  padding: 1rem 0;
+  border-bottom: 3px solid #3b3b4f;
+}
+
+fieldset:last-of-type {
+  border-bottom: none;
+}
+
+legend {
+	padding-top: 1rem;
+}
+
+.inline {
+	display: inline-block;
 }

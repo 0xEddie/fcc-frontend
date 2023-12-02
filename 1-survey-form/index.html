@@ -8,10 +8,12 @@
 </head>
 
 <body>
-	<h1 id="title">freeCodeCamp Survey Form</h1>
-	<p id="description">Thank you for helping us improve the platform!</p>
+	<header>
+		<h1 id="title">freeCodeCamp Survey Form</h1>
+		<p id="description">Thank you for helping us improve the platform!</p>
+	</header>
 	<form id="survey-form">
-		<fieldset>
+		<fieldset id="user-info-set">
 			<section>
 				<label for="name" id="name-label">Name</label>
 				<input type="text" required id="name" name="name" placeholder="bryan johnson">
@@ -25,10 +27,35 @@
 				<input type="number" name="age" id="number" placeholder="69" min="18" max="420">
 			</section>
 			<section>
-				<input type="submit" value="Submit" id="submit">
+				<label for="occupation" id="occupation-label">Occupation</label>
+				<select id="occupation" name="occuption">
+					<option value="">select current role</option>
+					<option value="1">student</option>
+					<option value="2">working</option>
+					<option value="3">prefer not to say</option>
+				</select>
 			</section>
+		</fieldset>
+		<fieldset id="recommend-set">
+			<legend>Would you recommend freeCodeCamp to a friend?</legend>
+			<label for="recommend-definitely" class="flex">
+				<input type="radio" id="recommend-definitely" name="recommended" class="inline" checked> definitely
+			</label>
+			<label for="recommend-maybe" class="flex">
+				<input type="radio" id="recommend-maybe" name="recommended" class="inline"> maybe
+			</label>
+			<label for="recommend-no" class="flex">
+				<input type="radio" id="recommend-no" name="recommended" class="inline"> no
+			</label>
+		</fieldset>
+		<fieldset>
+			<!-- checkboxes, each must have a `name` attribute -->
 
 		</fieldset>
+		<section>
+			<input type="submit" value="Submit" id="submit">
+		</section>
+
 	</form>
 </body>
 
