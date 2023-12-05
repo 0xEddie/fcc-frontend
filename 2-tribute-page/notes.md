@@ -93,3 +93,70 @@ canvas {
 ```
 
 ![image](https://github.com/0xEddie/fcc-frontend/assets/36518273/20029406-2677-4cc1-bcfe-7a9c75322c1d)
+
+## 05 Dec 2023
+### CSS content box sizing
+Building a little cat photo gallery
+```html
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="header">
+      <h1>css flexbox photo gallery</h1>
+    </header>
+    <div class="gallery">
+      <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/1.jpg">
+      <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/2.jpg">
+      <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/3.jpg">
+      <img src="https://cdn.freecodecamp.org/curriculum/css-photo-gallery/4.jpg">
+    </div>
+  </body>
+</html>
+```
+
+```css
+.gallery {
+  width: 50%;
+  border: 5px solid red;
+}
+img {
+  width: 100%;
+  padding: 5px;
+  border: 5px solid blue;
+}
+```
+
+We see the border and padding of each image element is overflowing outside of the parent gallery element.
+
+![image](https://github.com/0xEddie/fcc-frontend/assets/36518273/49305584-df43-4167-9b32-b64dc469d8b6)
+
+Putting `overflow:hidden` on the parent `.gallery` doesn't even fix this, it only chops off the offending pixels.
+```css
+.gallery {
+  ...
+  overflow: hidden;
+}
+```
+![image](https://github.com/0xEddie/fcc-frontend/assets/36518273/99b46399-d919-4a4d-91f0-479b300e0f1e)
+
+The `box-sizing` CSS property sets how the total width and height of an element is calculated.
+
+The default value is `content-box` and ONLY includes the content for calculating the width and height, it does NOT include the padding or border (or margin).
+
+The other interesting value is `border-box` which then includes the padding and border thickness in calculating the size of the content (still doesn't include margin).
+
+So one way to fix our overflowing photos is to throw `box-sizing: border-box;` onto the image elements.
+
+```css
+img {
+  ...
+  box-sizing: border-box;
+}
+```
+![image](https://github.com/0xEddie/fcc-frontend/assets/36518273/0f4d5bb3-b46b-4832-b81e-68519c8a6f17)
