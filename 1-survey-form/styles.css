@@ -1,6 +1,7 @@
 body {
 	width: clamp(250px, 40%, 400px);
 	margin: 1rem auto;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 header {
