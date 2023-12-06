@@ -160,3 +160,35 @@ img {
 }
 ```
 ![image](https://github.com/0xEddie/fcc-frontend/assets/36518273/0f4d5bb3-b46b-4832-b81e-68519c8a6f17)
+
+### css object-fit
+Some HTML elements are **replaced elements** - an element whose representation is outside the scope of CSS; they're external objects whose representation (content) is independent of the CSS formatting model. 
+- `<img>`
+- `<video>`
+- `<embed>`
+- `<iframe>`
+Examples:
+- The position, crop, and aspect ratio of an image element can be altered with CSS, but the image itself cannot be altered.
+- An `<iframe>` can have stylesheets of its own, but is unaffected by parent styling.
+
+The `object-fit` CSS property sets how the content of a replaced element should be resized to fit its container. The interesting values are:
+- `none`
+- `fill`
+- `contain`
+- `cover`
+
+- `object-fit: none;` does not scale or crop the image
+
+![image](https://github.com/0xEddie/fcc-frontend/assets/36518273/0f179c54-0915-40ea-a3b9-5c8460fa086b)
+
+- `object-fit: fill;` stretches the image to fit its container (altering the aspect ratio)
+
+![image](https://github.com/0xEddie/fcc-frontend/assets/36518273/18e32321-e628-4484-a3a0-860051afa38e)
+
+- `object-fit: contain;` stretches the image to fit its container without altering the aspect ratio by adding "[letterbox]([url](https://en.wikipedia.org/wiki/Letterboxing_(filming)))" margins
+
+![image](https://github.com/0xEddie/fcc-frontend/assets/36518273/fe4fee69-e53d-4e10-846c-21239de6507e)
+
+- `object-fit: cover;` embiggens the image so the entire viewport of its container is filled without altering the aspect ratio, and crops the offending extended pixels outside the container borders
+
+![image](https://github.com/0xEddie/fcc-frontend/assets/36518273/9f3ee56b-47ae-4fb8-9af8-7480400bafd9)
