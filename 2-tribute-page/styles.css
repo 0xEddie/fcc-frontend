@@ -1,0 +1,18 @@
+body {
+	width: clamp(250px, 40%, 600px);
+	/* margin: 1rem auto; */
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+figure {
+	text-align: center;
+}
+
+/* #image should use max-width and height properties to resize relative to the width of its parent element, 
+without exceeding its original size */
+#image {
+	/* img will not exceed its original size */
+	max-width: 100%;
+	/* img will stretch to fit its parent */
+	height: auto;
+}
