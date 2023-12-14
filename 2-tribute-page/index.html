@@ -12,15 +12,18 @@
 	<!-- main element, with a corresponding id of `main`, which contains all other elements -->
 	<main id="main">
 		<!-- element with an id of title, which contains a string that describes the subject of the tribute page -->
-		<h1 id="title">Dr. Carl Sagan</h1>
-		<p>The astronomer who brought the inspired wonder of the cosmos into your home</p>
+		<div class="header">
+			<h1 id="title">Dr. Carl Sagan</h1>
+			<p>The astronomer who brought the inspired wonder of the cosmos into your home</p>
+		</div>
 		<!-- figure or a div element with an id of `img-div` -->
 		<figure id="img-div">
 			<!-- #img-div element, with an image element with id="image" -->
 			<img src="./Sagan_large.jpg"
 				alt="Carl Sagan standing in front of Viking Lander mockup in Death Valley, California" id="image">
 			<!-- an element with a corresponding id="img-caption" text description of the image shown in #img-div -->
-			<figcaption id="img-caption">Carl Sagan standing in front of Viking Lander mockup in Death Valley, California
+			<figcaption id="img-caption" class="font-small">Carl Sagan standing in front of Viking Lander mockup in Death
+				Valley, California
 			</figcaption>
 		</figure>
 
@@ -154,7 +157,7 @@
 		</section>
 		<!-- an <a> with a id="tribute-link", links to an outside site, that contains additional info about the subject of the page -->
 		<!-- set it to _blank in order for your link to open in a new tab -->
-		<div id="footer">
+		<div class="footer">
 			Learn more about Carl Sagan and his work on <a href="https://en.wikipedia.org/wiki/Carl_Sagan"
 				target="_blank">Wikipedia</a>
 		</div>
