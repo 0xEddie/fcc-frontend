@@ -3,6 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Space+Grotesk:300,400,700" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
 	<title>Carl Sagan Tribute Page</title>
 </head>
 
@@ -14,53 +16,142 @@
 		<p>The astronomer who brought the inspired wonder of the cosmos into your home</p>
 		<!-- figure or a div element with an id of `img-div` -->
 		<figure id="img-div">
-			<!-- #img-div element, an img element with a corresponding id="image" -->
-			<!-- img element should be centered within its parent element -->
-			<img src="./sagan_viking.jpg"
+			<!-- #img-div element, with an image element with id="image" -->
+			<img src="./Sagan_large.jpg"
 				alt="Carl Sagan standing in front of Viking Lander mockup in Death Valley, California" id="image">
 			<!-- an element with a corresponding id="img-caption" text description of the image shown in #img-div -->
 			<figcaption id="img-caption">Carl Sagan standing in front of Viking Lander mockup in Death Valley, California
 			</figcaption>
 		</figure>
-		<!-- element with id="tribute-info", which contains textual content describing the subject of the tribute page -->
-		<div id="tribute-info">
-			A brief timeline of Carl Sagan's life and accomplishments
-		</div>
-		<div class="timeline">
-			1934
-			Born in Brooklyn, New York
-			1951
-			Graduated valedictorian of Rahway Highschool at 16. Started attending University of Chicago.
-			1954
-			Awarded Bachelor of Arts
-			1955
-			Awarded Bachelor of Science in Physics
-			1956
-			Earned Masters of Science in Physics
-			1958
-			Worked on Project A119 - a secret United States Air Force plan to detonate a nuclear warhead on the moon. In 1999
-			it was found that Sagan had applied to UC Berkley using two titles of classified papers from Project A119.
-			1960
-			Earned Doctor of Philosophy in astronomy and astrophysics. Started a 2 year Miller Fellowship at UC Berkley.
-			1963
-			Worked as an assistant professor at Harvard and worked at Smithsonian Astrophysical Observatory.
-			1968
-			Denied tenureship at Harvard unexpectedly, in part due to recommendations by former colleagues who didn't like his
-			publicized science advocacy work (perceived as self promotion on the backs of other's work). He then moved to work
-			at the Cornell astronomy department for the rest of his life.
-			1972
-			Assembled the first physical message sent into space: a plaque attached to space probe Pioneer 10
-			1977
-			Wrote "The Dragons of Eden: Speculations on the Evolution of Human Intelligence"
-			1980
-			Wrote and narrated "Cosmos: A Personal Voyage", a 13 part science themed variety show to inspire a general
-			audience of viewers, whom Sagan felt had lost interest in science, partly due to a stifled educational system.
-			1985
-			Wrote "Contact", a hard science fiction novel about the first contact between humans and extra-terrestrials.
-			1996
-			Passed away at 62 years of age, from pneumonia after enduring myelodysplastia for 2 years.
 
-		</div>
+		<!-- element with id="tribute-info", which contains textual content describing the subject of the tribute page -->
+		<section class="content">
+			<h2 id="tribute-info">
+				A brief timeline of Carl Sagan's life and accomplishments
+			</h2>
+			<div class="timeline">
+				<div class="entry">
+					<div class="year">
+						1934
+					</div>
+					<div class="event">
+						Born in Brooklyn, New York
+					</div>
+				</div>
+				<div class="entry">
+					<div class="year">
+						1951
+					</div>
+					<div class="event">
+						Graduated valedictorian of Rahway Highschool at 16. Started attending University of Chicago.
+					</div>
+				</div>
+				<div class="entry">
+					<div class="year">
+						1954
+					</div>
+					<div class="event">
+						Awarded Bachelor of Arts
+					</div>
+				</div>
+				<div class="entry">
+					<div class="year">
+						1955
+					</div>
+					<div class="event">
+						Awarded Bachelor of Science in Physics
+					</div>
+				</div>
+				<div class="entry">
+					<div class="year">
+						1956
+					</div>
+					<div class="event">
+						Earned Masters of Science in Physics
+					</div>
+				</div>
+				<div class="entry">
+					<div class="year">
+						1958
+					</div>
+					<div class="event">
+						Worked on Project A1x9 - a secret United States Air Force plan to detonate a nuclear warhead on the moon. In
+						x999 it was found that Sagan had applied to UC Berkley using two titles of classified papers from Project
+						A1x9.
+					</div>
+				</div>
+				<div class="entry">
+					<div class="year">
+						1960
+					</div>
+					<div class="event">
+						Earned Doctor of Philosophy in astronomy and astrophysics. Started a 2 year Miller Fellowship at UC
+						Berkley.
+					</div>
+				</div>
+				<div class="entry">
+					<div class="year">
+						1963
+					</div>
+					<div class="event">
+						Worked as an assistant professor at Harvard and worked at Smithsonian Astrophysical Observatory.
+					</div>
+				</div>
+				<div class="entry">
+					<div class="year">
+						1968
+					</div>
+					<div class="event">
+						Denied tenureship at Harvard unexpectedly, in part due to recommendations by former colleagues who
+						didn't like his publicized science advocacy work (perceived as self promotion on the backs of other's
+						work). He then moved to work at the Cornell astronomy department for the rest of his life.
+					</div>
+				</div>
+				<div class="entry">
+					<div class="year">
+						1972
+					</div>
+					<div class="event">
+						Assembled the first physical message sent into space: a plaque attached to space probe Pioneer 10
+					</div>
+				</div>
+				<div class="entry">
+					<div class="year">
+						1977
+					</div>
+					<div class="event">
+						Wrote "The Dragons of Eden: Speculations on the Evolution of Human Intelligence"
+					</div>
+				</div>
+				<div class="entry">
+					<div class="year">
+						1980
+					</div>
+					<div class="event">
+						Wrote and narrated "Cosmos: A Personal Voyage", a 13 part science themed variety show to inspire a
+						general
+						audience of viewers, whom Sagan felt had lost interest in science, partly due to a stifled educational
+						system.
+					</div>
+				</div>
+				<div class="entry">
+					<div class="year">
+						1985
+					</div>
+					<div class="event">
+						Wrote "Contact", a hard science fiction novel about the first contact between humans and
+						extra-terrestrials.
+					</div>
+				</div>
+				<div class="entry">
+					<div class="year">
+						1996
+					</div>
+					<div class="event">
+						Died of pneumonia after suffering myelodysplasia for 2 years.
+					</div>
+				</div>
+		</section>
 		<!-- an <a> with a id="tribute-link", links to an outside site, that contains additional info about the subject of the page -->
 		<!-- set it to _blank in order for your link to open in a new tab -->
 		<div id="footer">
