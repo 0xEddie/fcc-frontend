@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Converting React Apps to Typescript</title>
+	<title>Linting and Formatting React Apps</title>
 </head>
 
 <body>
@@ -20,10 +20,10 @@
 	<nav id="navbar">
 		<header>
 		</header>
-		<a class=".nav-link" href="">
-		</a>
-		<a class=".nav-link" href="">
-		</a>
+		<a class=".nav-link" href="#What_is_Static_Analysis">What is Static Analysis</a>
+		<a class=".nav-link" href="#What_is_Formatting">What is Formatting</a>
+		<a class=".nav-link" href="#What_is_a_Linter">What is a Linter</a>
+		<a class=".nav-link" href="#Running_ESLint">Running ESLint</a>
 		<a class=".nav-link" href="">
 		</a>
 		<a class=".nav-link" href="">
@@ -43,14 +43,59 @@
 		<!-- You should have at least 10 p elements (total) within your .main-section elements. -->
 		<!-- You should have at least five code elements that are descendants of .main-section elements. -->
 		<!-- You should have at least five li elements that are descendants of .main-section elements. -->
-		<section class="main-section" id="">
-			<header>
-			</header>
+		<section class="main-section" id="What_is_Static_Analysis">
+			<header> What is Static Analysis</header>
 			<p>
+				It is tooling that scrutinizes code without running it, as opposed to "dynamic analysis" which tests the result
+				of running code - like testing (unit tests or large end-to-end tests).
 			</p>
 			<p>
+				Static analysis also has a spectrum, but from ⚡ Speed <code><==></code> Power 💪
+			<ol>
+				<li>Formatters</li>
+				<li>Linters</li>
+				<li>Type Checkers</li>
+			</ol>
+			</p>
+		</section>
+
+		<section class="main-section" id="What_is_Formatting">
+			<header> What is Formatting</header>
+			<p>
+				A formatter is a tool that
+			<ol>
+				<li>reads your source code</li>
+				<li>ignores your formatting</li>
+				<li>rewrites it based on config rules</li>
+			</ol>
+			</p>
+			<p>
+				Ex. Prettier
+			</p>
+		</section>
+
+		<section class="main-section" id="What_is_a_Linter">
+			<header>What is a Linter</header>
+			<p>
+				A linter is a tool that runs a set of checks on your source code
+			</p>
+			<ol>
+				<li>Each check is a rule</li>
+				<li>Each rule may report on code it doesn't like</li>
+				<li>Each complaint may contain an optional autofix</li>
+			</ol>
+		</section>
+
+		<section class="main-section" id="Running_ESLint">
+			<header>Running ESLint</header>
+			<p>
+				In your terminal:
 			</p>
 			<pre><code>
+				npm install eslint --save-dev
+				npm init @eslint/config # eslint config wizard
+
+				npx eslint . # lint everything, in this directory
 			</code></pre>
 		</section>
 
