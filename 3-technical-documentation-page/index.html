@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Linting and Formatting React Apps</title>
+	<title>Static Analysis Tools for React Apps</title>
 </head>
 
 <body>
@@ -18,19 +18,16 @@
 	<!-- Each .nav-link should have an href attribute that links to its corresponding .main-section (e.g. If you click on a .nav-link element that contains the text "Hello world", the page navigates to a section element with that id). -->
 	<!-- Your #navbar should always be on the left edge of the window. -->
 	<nav id="navbar">
-		<header>
-		</header>
-		<a class=".nav-link" href="#What_is_Static_Analysis">What is Static Analysis</a>
-		<a class=".nav-link" href="#What_is_Formatting">What is Formatting</a>
-		<a class=".nav-link" href="#What_is_a_Linter">What is a Linter</a>
-		<a class=".nav-link" href="#Running_ESLint">Running ESLint</a>
-		<a class=".nav-link" href="">
-		</a>
-		<a class=".nav-link" href="">
-		</a>
-		<a class=".nav-link" href="">
-		</a>
+		<header>Static Analysis Tools for React Apps</header>
+		<a class="nav-link" href="#What_is_Static_Analysis">What is Static Analysis</a>
+		<a class="nav-link" href="#What_is_Formatting">What is Formatting</a>
+		<a class="nav-link" href="#What_is_a_Linter">What is a Linter</a>
+		<a class="nav-link" href="#Running_ESLint">Running ESLint</a>
+		<a class="nav-link" href="#Configuring_ESLint">Configuring ESLint</a>
+		<a class="nav-link" href="#Bonus_Round">Bonus Round</a>
+		<a class="nav-link" href="#Bonus-er_Round">Bonus-er Round</a>
 	</nav>
+
 	<!-- You should have a main element with an id of main-doc. -->
 	<main id="main-doc">
 		<!-- You should have at least five section elements with a class of main-section. -->
@@ -79,17 +76,26 @@
 			<p>
 				A linter is a tool that runs a set of checks on your source code
 			</p>
-			<ol>
+			<ul>
 				<li>Each check is a rule</li>
 				<li>Each rule may report on code it doesn't like</li>
 				<li>Each complaint may contain an optional autofix</li>
-			</ol>
+			</ul>
+			<p>
+				ESLint is a tool built into most text editors for identifying and reporting on patterns found in
+				ECMAScript/JavaScript code.
+			</p>
+			<ul>
+				<li>Every single rule of ESLint is a plugin</li>
+				<li>More rules can be added at runtime</li>
+				<li>The functionality of ESLint can be extended further by using community plugins, configs and parsers</li>
+			</ul>
 		</section>
 
 		<section class="main-section" id="Running_ESLint">
 			<header>Running ESLint</header>
 			<p>
-				In your terminal:
+				To install ESLint in a Node.js app, enter in your terminal:
 			</p>
 			<pre><code>
 				npm install eslint --save-dev
@@ -97,49 +103,87 @@
 
 				npx eslint . # lint everything, in this directory
 			</code></pre>
+			<p>
+				<b>Note:</b> <code>npm init @eslint/config</code> assumes you have a <code>package.json</code> file already.
+				If you don’t, make sure to run <code>npm init</code> or <code>yarn init</code> beforehand.
+			</p>
 		</section>
 
-		<section class="main-section" id="">
-			<header>
-			</header>
+		<section class="main-section" id="Configuring_ESLint">
+			<header>Configuring ESLint</header>
 			<p>
+				ESLint rules can be configured in <code>.eslintrc.js</code>.
 			</p>
 			<p>
 			</p>
 			<pre><code>
+				// .eslintrc.js
+				module.exports = {
+					// what eslint team thinks most codebases probably want
+					"extends": [
+						"eslint:recommended",
+						// config for React
+						"plugin:react/recommended",
+						"plugin:react-hooks/recommended"
+					],
+					"parserOptions": {
+						"ecmaFeatures": {
+							"jsx": true
+						}
+					},
+					"plugins": ["react", "react-hooks"],
+					"settings": {
+						"react": {
+							"version": "detect"
+						}
+					}
+					
+				}
 			</code></pre>
 		</section>
 
-		<section class="main-section" id="">
-			<header>
+		<section class="main-section" id="Bonus_Round">
+			<header>Bonus Round
 			</header>
 			<p>
-			</p>
-			<p>
+				When disabling eslint for a single line like
 			</p>
 			<pre><code>
+				// eslint-disable-next-line no-console
+				console.log("🥺")
+			</code></pre>
+			<p>
+				but then the <code>console.log</code> is later removed but <code>// eslint-disable</code> is not,
+				this will raise an exception so that you can find and remove it.
+			</p>
+			<pre><code>
+				// package.json
+				{
+					"scripts": {
+						"lint": "eslint . --report-unused-disable-directives"
+					}
+				}
 			</code></pre>
 		</section>
 
-		<section class="main-section" id="">
-			<header>
+		<section class="main-section" id="Bonus-er_Round">
+			<header>Bonus-er Round
 			</header>
 			<p>
+				<code>lint:fix</code> will fix whatever stuff has an autofix available
 			</p>
 			<p>
+				<code>--max-warnings 0</code> silences warnings from eslint, which is good to train us to not become complacent
+				about eslint messages.
 			</p>
 			<pre><code>
-			</code></pre>
-		</section>
-
-		<section class="main-section" id="">
-			<header>
-			</header>
-			<p>
-			</p>
-			<p>
-			</p>
-			<pre><code>
+				// package.json
+				{
+					"scripts": {
+						"lint": "eslint . --report-unused-disable-directives",
+						"lint:fix": "npm run lint -- --fix" 
+					}
+				}
 			</code></pre>
 		</section>
 
