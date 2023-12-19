@@ -98,10 +98,10 @@
 				To install ESLint in a Node.js app, enter in your terminal:
 			</p>
 			<pre><code>
-				npm install eslint --save-dev
-				npm init @eslint/config # eslint config wizard
+npm install eslint --save-dev
+npm init @eslint/config # eslint config wizard
 
-				npx eslint . # lint everything, in this directory
+npx eslint . # lint everything, in this directory
 			</code></pre>
 			<p>
 				<b>Note:</b> <code>npm init @eslint/config</code> assumes you have a <code>package.json</code> file already.
@@ -117,28 +117,28 @@
 			<p>
 			</p>
 			<pre><code>
-				// .eslintrc.js
-				module.exports = {
-					// what eslint team thinks most codebases probably want
-					"extends": [
-						"eslint:recommended",
-						// config for React
-						"plugin:react/recommended",
-						"plugin:react-hooks/recommended"
-					],
-					"parserOptions": {
-						"ecmaFeatures": {
-							"jsx": true
-						}
-					},
-					"plugins": ["react", "react-hooks"],
-					"settings": {
-						"react": {
-							"version": "detect"
-						}
-					}
-					
-				}
+// .eslintrc.js
+module.exports = {
+	// what eslint team thinks most codebases probably want
+	"extends": [
+		"eslint:recommended",
+		// config for React
+		"plugin:react/recommended",
+		"plugin:react-hooks/recommended"
+	],
+	"parserOptions": {
+		"ecmaFeatures": {
+			"jsx": true
+		}
+	},
+	"plugins": ["react", "react-hooks"],
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	}
+	
+}
 			</code></pre>
 		</section>
 
@@ -149,20 +149,20 @@
 				When disabling eslint for a single line like
 			</p>
 			<pre><code>
-				// eslint-disable-next-line no-console
-				console.log("🥺")
+// eslint-disable-next-line no-console
+console.log("🥺")
 			</code></pre>
 			<p>
 				but then the <code>console.log</code> is later removed but <code>// eslint-disable</code> is not,
 				this will raise an exception so that you can find and remove it.
 			</p>
 			<pre><code>
-				// package.json
-				{
-					"scripts": {
-						"lint": "eslint . --report-unused-disable-directives"
-					}
-				}
+// package.json
+{
+	"scripts": {
+		"lint": "eslint . --report-unused-disable-directives"
+	}
+}
 			</code></pre>
 		</section>
 
@@ -177,13 +177,13 @@
 				about eslint messages.
 			</p>
 			<pre><code>
-				// package.json
-				{
-					"scripts": {
-						"lint": "eslint . --report-unused-disable-directives",
-						"lint:fix": "npm run lint -- --fix" 
-					}
-				}
+// package.json
+{
+	"scripts": {
+		"lint": "eslint . --report-unused-disable-directives",
+		"lint:fix": "npm run lint -- --fix" 
+	}
+}
 			</code></pre>
 		</section>
 
