@@ -1,16 +1,35 @@
 /* Your Technical Documentation project should use at least one media query.  */
+@import url('https://fonts.cdnfonts.com/css/helvetica-neue-55');
+                
 :root {
-	--background-color: #FFCAB1;
-	--nav-background-color: #FF9D70;
-	--link-background-color: #F54E00;
-	--font-color: #1E2019;
+	--background-color: #fdd0bb;
+	--nav-background-color: #ffa47a;
+	--nav-link-color: rgb(77, 78, 83);
+	--link-background-color: #ee763e;
+	--font-color: #1a1b16;
 }
 
 body {
-	font-family: Verdana, serif;
+	font-family: 'Helvetica Neue', H, serif;
 	font-size: 16px;
 	background-color: var(--background-color);
 	color: var(--font-color);
+
+	::selection {
+		background-color: var(--link-background-color);
+	}
+}
+
+main {
+	padding: 20px;
+}
+
+p, li {
+	font-weight: 300;
+	letter-spacing: 0.5px;
+}
+ul li::marker {
+	font-size: 0.8rem;
 }
 
 #navbar {
@@ -18,15 +37,49 @@ body {
 	
 	header {
 		font-size: 1.875rem;
-		margin: 10px;
+		margin: 0 10px 10px;
 	}
 	
-	.navlink {
-		display: block;
-		color: var(--font-color);
-		
-		&:hover {
-			background-color: var(--link-background-color);
-		}
+	.nav-link-wrapper {
+		box-sizing: content-box;
+		border: 1px solid var(--font-color);
+		margin: 5px;
 	}
+	
+	.nav-link {
+		display: block;
+		padding: 10px 30px;
+		color: var(--nav-link-color);
+	}
+	.nav-link:link,
+	.nav-link:visited {
+		text-decoration: none;
+	}
+	.nav-link:hover,
+	.nav-link:active {
+		background-color: var(--link-background-color);
+		text-decoration: underline;
+	}
+	
+	padding-bottom: 2px;
+	border-bottom: 2px solid var(--font-color);
+}
+
+.main-section {
+	header {
+		font-size: 1.5rem;
+		font-style: italic;
+	}
+	
+	article {
+		padding: 0 20px;
+	}
+}
+
+/* UTILITY CLASSES */
+.bold {
+	font-weight: 900;
+}
+.inline-block {
+	display: inline-block;
 }

@@ -21,13 +21,15 @@
 	<!-- Your #navbar should always be on the left edge of the window. -->
 	<nav id="navbar">
 		<header>Static Analysis Tools for React Apps</header>
-		<a class="nav-link" href="#What_is_Static_Analysis">What is Static Analysis</a>
-		<a class="nav-link" href="#What_is_Formatting">What is Formatting</a>
-		<a class="nav-link" href="#What_is_a_Linter">What is a Linter</a>
-		<a class="nav-link" href="#Running_ESLint">Running ESLint</a>
-		<a class="nav-link" href="#Configuring_ESLint">Configuring ESLint</a>
-		<a class="nav-link" href="#Bonus_Round">Bonus Round</a>
-		<a class="nav-link" href="#Bonus-er_Round">Bonus-er Round</a>
+		<div class="nav-link-wrapper">
+			<a class="nav-link" href="#What_is_Static_Analysis">What is Static Analysis</a>
+			<a class="nav-link" href="#What_is_Formatting">What is Formatting</a>
+			<a class="nav-link" href="#What_is_a_Linter">What is a Linter</a>
+			<a class="nav-link" href="#Running_ESLint">Running ESLint</a>
+			<a class="nav-link" href="#Configuring_ESLint">Configuring ESLint</a>
+			<a class="nav-link" href="#Bonus_Round">Bonus Round</a>
+			<a class="nav-link" href="#Bonus-er_Round">Bonus-er Round</a>
+		</div>
 	</nav>
 
 	<!-- You should have a main element with an id of main-doc. -->
@@ -51,7 +53,8 @@
 					of running code - like testing (unit tests or large end-to-end tests).
 				</p>
 				<p>
-					Static analysis also has a spectrum, but from ⚡ Speed <code><==></code> Power 💪
+					Static analysis also has a spectrum, but from <span class="inline-block">⚡ Speed <code><==></code> Power 💪
+					</span>
 				<ol>
 					<li>Formatters</li>
 					<li>Linters</li>
@@ -114,7 +117,8 @@ npm init @eslint/config # eslint config wizard
 npx eslint . # lint everything, in this directory
 				</code></pre>
 				<p>
-					<b>Note:</b> <code>npm init @eslint/config</code> assumes you have a <code>package.json</code> file already.
+					<span class="bold">Note:</span> <code>npm init @eslint/config</code> assumes you have a
+					<code>package.json</code> file already.
 					If you don’t, make sure to run <code>npm init</code> or <code>yarn init</code> beforehand.
 				</p>
 			</article>
