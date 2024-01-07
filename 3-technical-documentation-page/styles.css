@@ -18,6 +18,8 @@ body {
 	::selection {
 		background-color: var(--link-background-color);
 	}
+	
+	
 }
 
 main {
@@ -32,8 +34,11 @@ ul li::marker {
 	font-size: 0.8rem;
 }
 
-#navbar {
+.nav-wrapper {
 	background-color: var(--nav-background-color);
+}
+
+#navbar {
 	
 	header {
 		font-size: 1.875rem;
@@ -76,10 +81,36 @@ ul li::marker {
 	}
 }
 
+code {
+	tab-size: 4;
+	overflow-x: scroll;
+}
+
 /* UTILITY CLASSES */
 .bold {
 	font-weight: 900;
 }
 .inline-block {
 	display: inline-block;
+}
+
+@media (min-width: 768px) {
+	body {
+		display: grid;
+		grid-template-columns: 210px auto;
+		grid-template-rows: none;
+	}
+	
+	.nav-wrapper {
+		min-height: 110vh;
+		min-width: 210px;
+		margin-top: -5vh;
+		position: relative;
+	}
+	
+	#navbar {
+		position: fixed;
+		border-bottom: none;
+		max-width: 210px;
+	}
 }
