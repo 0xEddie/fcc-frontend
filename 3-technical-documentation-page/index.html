@@ -113,12 +113,13 @@
 				<p>
 					To install ESLint in a Node.js app, enter in your terminal:
 				</p>
-				<pre><code>
+				<div class="code-block">
+					<pre><code>
 npm install eslint --save-dev
 npm init @eslint/config # eslint config wizard
 
-npx eslint . # lint everything, in this directory
-				</code></pre>
+npx eslint . # lint everything, in this directory</code></pre>
+				</div>
 				<p>
 					<span class="bold">Note:</span> <code>npm init @eslint/config</code> assumes you have a
 					<code>package.json</code> file already.
@@ -135,7 +136,8 @@ npx eslint . # lint everything, in this directory
 				</p>
 				<p>
 				</p>
-				<pre><code>
+				<div class="code-block">
+					<pre><code>
 // .eslintrc.js
 module.exports = {
 	// what eslint team thinks most codebases probably want
@@ -157,8 +159,8 @@ module.exports = {
 		}
 	}
 	
-}
-				</code></pre>
+}</code></pre>
+				</div>
 			</article>
 		</section>
 
@@ -168,22 +170,24 @@ module.exports = {
 				<p>
 					When disabling eslint for a single line like
 				</p>
-				<pre><code>
+				<div class="code-block">
+					<pre><code>
 // eslint-disable-next-line no-console
-console.log("🥺")
-				</code></pre>
+console.log("🥺")</code></pre>
+				</div>
 				<p>
 					but then the <code>console.log</code> is later removed but <code>// eslint-disable</code> is not,
 					this will raise an exception so that you can find and remove it.
 				</p>
-				<pre><code>
+				<div class="code-block">
+					<pre><code>
 // package.json
 {
 	"scripts": {
 		"lint": "eslint . --report-unused-disable-directives"
 	}
-}
-				</code></pre>
+}</code></pre>
+				</div>
 			</article>
 		</section>
 
@@ -198,15 +202,16 @@ console.log("🥺")
 					complacent
 					about eslint messages.
 				</p>
-				<pre><code>
+				<div class="code-block">
+					<pre><code>
 // package.json
 {
 	"scripts": {
 		"lint": "eslint . --report-unused-disable-directives",
 		"lint:fix": "npm run lint -- --fix" 
 	}
-}
-				</code></pre>
+}</code></pre>
+				</div>
 			</article>
 		</section>
 
