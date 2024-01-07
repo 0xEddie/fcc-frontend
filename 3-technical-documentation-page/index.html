@@ -114,8 +114,7 @@
 					To install ESLint in a Node.js app, enter in your terminal:
 				</p>
 				<div class="code-block">
-					<pre><code>
-npm install eslint --save-dev
+					<pre><code>npm install eslint --save-dev
 npm init @eslint/config # eslint config wizard
 
 npx eslint . # lint everything, in this directory</code></pre>
@@ -137,8 +136,7 @@ npx eslint . # lint everything, in this directory</code></pre>
 				<p>
 				</p>
 				<div class="code-block">
-					<pre><code>
-// .eslintrc.js
+					<pre><code>// .eslintrc.js
 module.exports = {
 	// what eslint team thinks most codebases probably want
 	"extends": [
@@ -171,8 +169,7 @@ module.exports = {
 					When disabling eslint for a single line like
 				</p>
 				<div class="code-block">
-					<pre><code>
-// eslint-disable-next-line no-console
+					<pre><code>// eslint-disable-next-line no-console
 console.log("🥺")</code></pre>
 				</div>
 				<p>
@@ -180,8 +177,7 @@ console.log("🥺")</code></pre>
 					this will raise an exception so that you can find and remove it.
 				</p>
 				<div class="code-block">
-					<pre><code>
-// package.json
+					<pre><code>// package.json
 {
 	"scripts": {
 		"lint": "eslint . --report-unused-disable-directives"
@@ -203,8 +199,7 @@ console.log("🥺")</code></pre>
 					about eslint messages.
 				</p>
 				<div class="code-block">
-					<pre><code>
-// package.json
+					<pre><code>// package.json
 {
 	"scripts": {
 		"lint": "eslint . --report-unused-disable-directives",
