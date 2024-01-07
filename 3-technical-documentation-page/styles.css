@@ -3,6 +3,7 @@
                 
 :root {
 	--background-color: #fdd0bb;
+	--code-background-color: #fdba9c;
 	--nav-background-color: #ffa47a;
 	--nav-link-color: rgb(77, 78, 83);
 	--link-background-color: #ee763e;
@@ -48,7 +49,11 @@ ul li::marker {
 	.nav-link-wrapper {
 		box-sizing: content-box;
 		border: 1px solid var(--font-color);
-		margin: 5px;
+		margin: 4px;
+		display: flex;
+		flex-direction: column;
+		max-height: 154px;
+		flex-wrap: wrap;
 	}
 	
 	.nav-link {
@@ -84,6 +89,9 @@ ul li::marker {
 code {
 	tab-size: 4;
 	overflow-x: scroll;
+	letter-spacing: -0.1px;
+	font-size: 15px;
+	background-color: var(--code-background-color);
 }
 
 /* UTILITY CLASSES */
@@ -115,13 +123,14 @@ code {
 		margin-top: 0.8rem;
 		
 		.nav-link-wrapper {
+			max-height: fit-content;
 			margin-top: 1rem;
 			padding-top: 0.5rem;
 			padding-bottom: 0.5rem;
 		}
 	}
 	
-	#main-doc section header {
-		margin-left: -1rem;
+	#main-doc {
+		overflow-x: hidden;
 	}
 }
