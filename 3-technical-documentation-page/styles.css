@@ -88,6 +88,7 @@ code {
 
 /* UTILITY CLASSES */
 .bold {
+	font-weight: 700;
 	font-weight: 900;
 }
 .inline-block {
@@ -102,9 +103,8 @@ code {
 	}
 	
 	.nav-wrapper {
-		min-height: 110vh;
+		min-height: 100vh;
 		min-width: 210px;
-		margin-top: -5vh;
 		position: relative;
 	}
 	
@@ -112,5 +112,16 @@ code {
 		position: fixed;
 		border-bottom: none;
 		max-width: 210px;
+		margin-top: 0.8rem;
+		
+		.nav-link-wrapper {
+			margin-top: 1rem;
+			padding-top: 0.5rem;
+			padding-bottom: 0.5rem;
+		}
+	}
+	
+	#main-doc section header {
+		margin-left: -1rem;
 	}
 }
