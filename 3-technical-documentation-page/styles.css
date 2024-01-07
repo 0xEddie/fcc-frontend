@@ -94,6 +94,27 @@ code {
 	background-color: var(--code-background-color);
 }
 
+.code-block {
+	background-color: var(--code-background-color);
+	overflow-x: auto;
+}
+
+/* SCROLL BAR/* width */
+::-webkit-scrollbar {
+  width: 10px;
+	height: 9px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--nav-link-color);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #bbb;
+}
+
 /* UTILITY CLASSES */
 .bold {
 	font-weight: 700;
@@ -103,6 +124,7 @@ code {
 	display: inline-block;
 }
 
+/* RESPONSIVE DESIGN */
 @media (min-width: 768px) {
 	body {
 		display: grid;
