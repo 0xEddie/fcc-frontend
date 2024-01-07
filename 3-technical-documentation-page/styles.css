@@ -97,6 +97,7 @@ code {
 .code-block {
 	background-color: var(--code-background-color);
 	overflow-x: auto;
+	margin-bottom: 0.8rem;
 }
 
 /* SCROLL BAR/* width */
@@ -107,12 +108,12 @@ code {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--nav-link-color);
+  background: var(--nav-background-color);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #bbb;
+  background: var(--link-background-color);
 }
 
 /* UTILITY CLASSES */
