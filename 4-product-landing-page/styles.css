@@ -4,3 +4,49 @@
 /* navbar = 75px tall */
 /* the navbar should always be at the top of the viewport */
 /* logo = 35px x 35px */
+div,
+footer,
+header {
+	border: 1px solid darkred;
+}
+
+body {
+	max-width: 1000px;
+	margin: 0 auto;
+}
+
+header {
+	height: 75px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo-wrapper {
+	display: flex;
+	align-items: center;
+	margin-left: 1rem;
+}
+
+#nav-bar {
+	margin-right: 1rem;
+	display: flex;
+	column-gap: 4vw;
+}
+
+.nav-link:link,
+.nav-link:visited {
+	text-decoration: inherit;
+	color: inherit;
+}
+
+.hero {
+	display: flex;
+	align-items: center;
+	column-gap: 5vw;
+}
+
+.hero-img {
+	height: 450px;
+	max-width: auto;
+}
