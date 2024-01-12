@@ -50,3 +50,11 @@ header {
 	height: 450px;
 	max-width: auto;
 }
+
+.info-point {
+	display: grid;
+	grid-template-columns: auto 1fr;
+	grid-template-areas:
+		"icon header"
+		"icon desc";
+}
