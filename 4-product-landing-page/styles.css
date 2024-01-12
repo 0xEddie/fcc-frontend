@@ -55,6 +55,22 @@ header {
 	display: grid;
 	grid-template-columns: auto 1fr;
 	grid-template-areas:
-		"icon header"
+		"icon title"
 		"icon desc";
+	align-items: center;
+}
+
+.point-icon {
+	grid-area: icon;
+	margin: 0 5vw;
+}
+
+.point-title {
+	grid-area: title;
+	margin-bottom: 0;
+}
+
+.point-text {
+	grid-area: desc;
+	margin-top: 0;
 }
