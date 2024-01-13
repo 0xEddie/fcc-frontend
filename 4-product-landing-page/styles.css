@@ -66,3 +66,9 @@ header {
 .point-icon {
 	padding-inline: 5vw;
 }
+
+.product-video {
+	display: flex;
+	justify-content: center;
+	margin-block: 1.5rem;
+}
