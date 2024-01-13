@@ -7,7 +7,7 @@
 div,
 footer,
 header {
-	border: 1px solid darkred;
+	/* border: 1px solid darkred; */
 }
 
 * {
@@ -44,10 +44,18 @@ header {
 	color: inherit;
 }
 
+main {
+	overflow-x: hidden;
+}
+
 .hero {
 	display: flex;
 	align-items: center;
-	column-gap: 5vw;
+}
+
+.hero-text {
+	margin-inline: 5vw;
+	text-align: center;
 }
 
 .hero-img {
