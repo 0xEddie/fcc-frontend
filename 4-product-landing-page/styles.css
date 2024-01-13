@@ -10,6 +10,10 @@ header {
 	border: 1px solid darkred;
 }
 
+* {
+	margin: 0;
+}
+
 body {
 	max-width: 1000px;
 	margin: 0 auto;
@@ -47,30 +51,18 @@ header {
 }
 
 .hero-img {
-	height: 450px;
-	max-width: auto;
+	/* height: 450px;
+	max-width: auto; */
+	height: auto;
+	width: 60%;
 }
 
 .info-point {
-	display: grid;
-	grid-template-columns: auto 1fr;
-	grid-template-areas:
-		"icon title"
-		"icon desc";
+	display: flex;
 	align-items: center;
+	padding-block: 1rem;
 }
 
 .point-icon {
-	grid-area: icon;
-	margin: 0 5vw;
-}
-
-.point-title {
-	grid-area: title;
-	margin-bottom: 0;
-}
-
-.point-text {
-	grid-area: desc;
-	margin-top: 0;
+	padding-inline: 5vw;
 }
