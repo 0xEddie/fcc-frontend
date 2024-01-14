@@ -12,3 +12,7 @@ Build an app that is functionally similar to https://product-landing-page.freeco
 - Josh Comeau has the best article on the [the mechanics of flexbox](https://www.joshwcomeau.com/css/interactive-guide-to-flexbox) I've ever read. Especially helpful was the section on how some elements have implicit `min-width`, which explains why I was struggling with preformatted code blocks before. Wish I knew that sooner!
 	- setting `min-width: 0` will fix this
 	- `min-height: 0` also fixes stuff like this but it happens less often
+- If `position: sticky` isn't working (but `position: static` does?) then that [usually means](https://stackoverflow.com/a/43707215) either
+	- the parent element(**s**) have `overflow` set to `hidden`, `scroll`, or `auto`
+	- you need to set `top: 0`
+		- "You must specify a threshold with at least one of `top`, `right`, `bottom`, or `left` for sticky positioning to behave as expected. Otherwise, it will be indistinguishable from relative positioning"

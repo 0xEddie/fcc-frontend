@@ -203,7 +203,7 @@
 		<div class="product-video">
 			<!-- you can watch an embedded product video with id="video" -->
 			<!-- https://www.youtube.com/watch?v=eMJk4y9NGvE -->
-			<iframe width="698" height="393" src="https://www.youtube.com/embed/eMJk4y9NGvE"
+			<iframe id="video" width="698" height="393" src="https://www.youtube.com/embed/eMJk4y9NGvE"
 				title="Plumbus: How They Do It | Rick and Morty | Adult Swim" frameborder="0"
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 				allowfullscreen></iframe>
@@ -216,12 +216,12 @@
 			<!-- https://rickandmorty.fandom.com/wiki/Plumbus -->
 
 			<!-- your landing page has a form element with a corresponding id="form" -->
-			<form action="https://www.freecodecamp.com/email-submit" id="form">
+			<form method="post" action="https://www.freecodecamp.com/email-submit" id="form">
 				<label for="customer-email">Email address to receive a quote</label>
 				<!-- within the form, there is an input field with id="email" where you can enter an email address -->
 				<!-- the #email input field should have placeholder text to let users know what the field is for -->
 				<!-- the #email input field uses html5 validation to confirm that the entered text is an email address -->
-				<input type="email" name="customer-email" id="email" placeholder="example@gmail.com" required>
+				<input type="email" name="email" id="email" placeholder="example@gmail.com" required>
 				<!-- within the form, there is a submit input with a corresponding id="submit" -->
 				<!-- when you click the #submit element, the email is submitted to a static page (use this mock url: https://www.freecodecamp.com/email-submit) -->
 				<input type="submit" value="Get a Quote" id="submit">
