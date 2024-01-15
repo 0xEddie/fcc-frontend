@@ -4,10 +4,9 @@
 /* navbar = 75px tall */
 /* the navbar should always be at the top of the viewport */
 /* logo = 35px x 35px */
-div,
-footer,
-header {
-	/* border: 1px solid darkred; */
+:root {
+	--nav-bg: #ffc5c9;
+	--body-bg: #ffeaec;
 }
 
 * {
@@ -17,10 +16,13 @@ header {
 body {
 	max-width: 1000px;
 	margin: 0 auto;
+	background-color: var(--body-bg);
+	font-family: Inter, sans-serif;
 }
 
 header {
 	height: 75px;
+	background-color: var(--nav-bg);
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -46,8 +48,8 @@ header {
 	color: inherit;
 }
 
-main {
-	overflow-x: hidden;
+main>*:not(:first-child) {
+	padding-top: 100px;
 }
 
 .hero {
@@ -81,4 +83,8 @@ main {
 	display: flex;
 	justify-content: center;
 	margin-block: 1.5rem;
+}
+
+footer {
+	background-color: var(--nav-bg);
 }
