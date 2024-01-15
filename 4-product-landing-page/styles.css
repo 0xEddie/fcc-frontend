@@ -20,6 +20,10 @@ body {
 	font-family: 'Inter', sans-serif;
 }
 
+.spacer {
+	height: 75px;
+}
+
 header {
 	height: 75px;
 	background-color: var(--nav-bg);
@@ -51,14 +55,6 @@ header {
 .nav-link:visited {
 	text-decoration: inherit;
 	color: inherit;
-}
-
-main>*:not(:first-child) {
-	padding-top: 100px;
-}
-
-main>*:not(:last-child) {
-	margin-bottom: -50px;
 }
 
 .hero {
@@ -95,11 +91,19 @@ main>*:not(:last-child) {
 
 .product-video {
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	align-items: center;
 	margin-block: 1.5rem;
+}
+
+.cta {
+	border: 1px solid black;
+	max-width: fit-content;
+	margin: 75px auto 0;
 }
 
 footer {
 	background-color: var(--nav-bg);
 	font-size: 10px;
+	padding: 10px 50px;
 }
