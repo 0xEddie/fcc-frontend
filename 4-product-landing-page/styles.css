@@ -14,10 +14,10 @@
 }
 
 body {
-	max-width: 1000px;
+	max-width: 950px;
 	margin: 0 auto;
 	background-color: var(--body-bg);
-	font-family: Inter, sans-serif;
+	font-family: 'Inter', sans-serif;
 }
 
 header {
@@ -36,6 +36,11 @@ header {
 	margin-left: 1rem;
 }
 
+.header-title {
+	font-size: 2rem;
+	font-family: 'Salsa', cursive;
+}
+
 #nav-bar {
 	margin-right: 1rem;
 	display: flex;
@@ -50,6 +55,10 @@ header {
 
 main>*:not(:first-child) {
 	padding-top: 100px;
+}
+
+main>*:not(:last-child) {
+	margin-bottom: -50px;
 }
 
 .hero {
@@ -77,6 +86,11 @@ main>*:not(:first-child) {
 
 .point-icon {
 	padding-inline: 5vw;
+	min-width: 64px;
+}
+
+.point-desc {
+	padding-right: 5vw;
 }
 
 .product-video {
@@ -87,4 +101,5 @@ main>*:not(:first-child) {
 
 footer {
 	background-color: var(--nav-bg);
+	font-size: 10px;
 }
