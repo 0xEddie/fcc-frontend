@@ -43,12 +43,15 @@ header {
 .header-title {
 	font-size: 2rem;
 	font-family: 'Salsa', cursive;
+	line-height: 0.9;
 }
 
 #nav-bar {
 	margin-right: 1rem;
 	display: flex;
 	column-gap: 4vw;
+	align-items: center;
+	line-height: 0.9;
 }
 
 .nav-link:link,
@@ -57,14 +60,35 @@ header {
 	color: inherit;
 }
 
+@media (max-width: 700px) {
+	.collapse {
+		display: none;
+	}
+
+	.header-title {
+		font-size: 1rem;
+	}
+
+	.point-title {
+		padding-left: 1vw;
+	}
+
+	.point-desc {
+		padding-left: 5vw;
+	}
+}
+
 .hero {
 	display: flex;
 	align-items: center;
 }
 
 .hero-text {
-	margin-inline: 5vw;
+	margin-inline: 9vw;
 	text-align: center;
+	font-style: italic;
+	font-size: 1.5rem;
+	line-height: 2;
 }
 
 .hero-img {
@@ -106,4 +130,5 @@ footer {
 	background-color: var(--nav-bg);
 	font-size: 10px;
 	padding: 10px 50px;
+	text-align: end;
 }
