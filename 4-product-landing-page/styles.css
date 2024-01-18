@@ -161,7 +161,8 @@ iframe#video {
 
 #email {
 	text-align: center;
-	width: 40ch;
+	min-width: 40ch;
+	max-width: 100%;
 	border: none;
 	border-radius: 5px;
 	padding-block: 0.5rem;
