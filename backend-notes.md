@@ -1,6 +1,7 @@
 # freeCodeCamp Back End Development and APIs Notes
 
 - I had trouble getting the tests to pass using GitHub pages or Replit or Netlify for static hosting. glitch.com seems to work though
+- Apparently these can be worked on [locally](https://www.freecodecamp.org/news/how-to-run-the-freecodecamp-backend-challenges-locally/), then you just submit a `localhost` URL to the fCC certificate verifier thingy
 
 ## 2 - Start a Working Express Server
 
@@ -27,7 +28,7 @@ app.get('/', (req, res) => {
 });
 ```
 
-## Serve an HTML File
+## 3 - Serve an HTML File
 
 You can respond to requests with a file using the `res.sendFile(path)` method. You can put it inside the app.get('/', ...) route handler
 - Behind the scenes, this method will set the appropriate headers to instruct your browser on how to handle the file you want to send, according to its type. Then it will read and send the file.
@@ -46,7 +47,7 @@ app.get('/', (req, res) => {
 })
 ```
 
-## Serve Static Assets
+## 4 - Serve Static Assets
 An HTML server usually has one or more directories that are accessible by the user. You can place there the static assets needed by your application (stylesheets, scripts, images).
 
 In Express, you can put in place this functionality using the middleware express.static(path), where the path parameter is the absolute path of the folder containing the assets.
@@ -54,16 +55,16 @@ In Express, you can put in place this functionality using the middleware express
 Middleware are functions that intercept route handlers, adding some kind of information. A middleware needs to be mounted using the method `app.use(path, middlewareFunction)`
 - The first `path` argument is optional. If you don’t pass it, the middleware will be executed for all requests
 
-### Mount the express.static() middleware to the path /public with app.use()
+### Mount the `express.static()` middleware to the path `/public` with `app.use()`
 
-The absolute path to the assets folder is __dirname + /public.
+The absolute path to the assets folder is `__dirname + /public`
 
 ```js
 const absPath = __dirname + '/public';
 app.use('/public', express.static(absPath))
 ```
 
-## Serve JSON on a Specific Route
+## 5 - Serve JSON on a Specific Route
 
 While an HTML server serves HTML, an API serves data.
 
@@ -74,5 +75,111 @@ The client only needs to know where the resource is (the URL), and the action it
 Inside the route handler, use the method res.json()
 
 ```js
-
+app.get('/json', (req, res) => {
+  res.json({"message": "Hello json"})
+})
 ```
+
+## 7 - Implement a Root-Level Request Logger Middleware
+
+### Build a simple logger. For every request, it should log to the console a string taking the following format: `method path - ip`
+
+The request method (http verb), relative route path, and the caller's ip can be accessed from the request object
+- `req.method`
+- `req.path`
+- `req.ip`
+
+```js
+// at top of code, so that this applies to all routes
+app.use(function middleware(req, res, next) {
+  const logMsg = `${req.method} ${req.path} - ${req.ip}`;
+  console.log(logMsg);
+  next();
+})
+```
+
+## 8 - Chain Middleware to Create a Time Server
+
+Middleware can be mounted at a specific route using app.METHOD(path, middlewareFunction). Middleware can also be chained within a route definition.
+
+```js
+app.get('/user', function(req, res, next) {
+  req.user = getTheUserSync();  // Hypothetical synchronous operation
+  next();
+}, function(req, res) {
+  res.send(req.user);
+});
+```
+
+This approach
+- is useful to split the server operations into smaller units
+- can be sued to perform some validation on the data
+
+### In the `/now` route, chain a `get` request's middleware function and final handler
+
+- In the middleware function add the current time to the request object in the `req.time` key
+    - Use `new Date().toString()`
+- In the handler respond with a JSON object with structure `{time: req.time}`
+- Test will not pass if you don't chain the middleware
+
+```js
+app.get(
+  '/now',
+  (req, res, next) => {
+    req.time = new Date().toString();
+    next();
+  }, (req, res) => {
+    console.log(`Request timestamp: ${req.time}`);
+    res.send({time: req.time});
+})
+```
+
+## 9 - Get Route Parameter Input from the Client
+
+One way to get input from a client is by using route parameters. Route parameters are named segments of the URL, delimited by slashes (/)
+- each segment captures the value of the part of the URL
+- values can be found in the req.params object
+
+```js
+route_path:         '/user/:userId/book/:bookId'
+actual_request_URL: '/user/546/book/6754'
+req.params:         {userId: '546', bookId: '6754'}
+```
+
+### Build an echo server, mounted at the route `GET /:word/echo`
+- Respond with a JSON object, taking the structure `{echo: word}`
+- find the word to be repeated at req.params.word
+- You can test your route from your browser's address bar e.g. `your-app-rootpath/freecodecamp/echo`
+
+## 10 - Get Query Parameter Input from the Client
+
+Another way to get client input is by using query strings. A query string
+- is delimted by a question mark `?`
+- includes `field=value` couples
+    - each couple is separated by an ampersand `&`
+```js
+route_path: '/library'
+actual_request_URL: '/library?userId=546&bookId=6754'
+req.query: {userId: '546', bookId: '6754'}
+```
+
+Express.js can parse teh data from the query string, and populates the object `req.query`
+- Some characters (like a percent `%`, space ` `) cannot be in URLs and have to be encoded in different formats before you can send them
+- JavaScript has standard methods for encoding and decoding these characters
+
+### Build an API endpoint, mounted at `GET /name`
+- Respond with a JSON document, taking the structure `{ name: 'firstname lastname'}`
+- The first and last name parameters should be encoded in a query string `?first=firstname&last=lastname`
+
+Optional clean coding practice: `app.route(path).get(handler).post(handler)` allows you to chain different verb handlers on the same path route
+
+```js
+app.get("/name", (req, res) => {
+  // console.log(req.query);
+  res.send({name: req.query.first + ' ' + req.query.last})
+})
+```
+
+## 11 - Use `body-parser` to Parse POST Requests
+
+
